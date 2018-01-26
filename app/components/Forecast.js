@@ -35,6 +35,7 @@ class Forecast extends Component {
                 })
             }.bind(this))
     }
+    // This is needed in order to update the Forecast status if the search is triggered again
     componentWillReceiveProps(nextProps) {
         this.city = queryString.parse(nextProps.location.search).city;
         this.makeRequest(this.city);
