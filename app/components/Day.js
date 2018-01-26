@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 var utils = require('../utils/helpers');
 var getDate = utils.getDate;
 

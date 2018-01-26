@@ -40,6 +40,13 @@ class Forecast extends Component {
         this.city = queryString.parse(nextProps.location.search).city;
         this.makeRequest(this.city);
     }
+    handleClick(city) {
+        city.city = this.city;
+        this.props.history.push({
+            pathname: '/details/' + this.city,
+            state: city,
+        })
+    }
     render() {
         return this.state.loading === true
             ? <h1 className='forecast-header'> Loading </h1>
@@ -47,7 +54,7 @@ class Forecast extends Component {
                 <h1 className='forecast-header'>{this.city}</h1>
                 <div className='forecast-container'>
                     {this.state.forecastData.list.map(function (listItem) {
-                        return <Day key={listItem.dt} day={listItem} />
+                        return <Day onClick={this.handleClick.bind(this, listItem)} key={listItem.dt} day={listItem} />
                     }, this)}
                 </div>
             </div>

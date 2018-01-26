@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Home from './Home'
 import Forecast from './Forecast'
 import Search from './Search'
+import Detail from './Detail'
 
 var ReactRouter = require('react-router-dom');
 var BrowserRouter = ReactRouter.BrowserRouter;
@@ -34,6 +35,7 @@ class App extends Component {
                     }} />
                     <Route exact path='/' component={Home} />
                     <Route path='/forecast' component={Forecast} />
+                    <Route path='/details/:city' component={Detail} />
                 </div>
             </BrowserRouter>
         );
