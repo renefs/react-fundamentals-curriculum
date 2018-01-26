@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+var utils = require('../utils/helpers');
+var getDate = utils.getDate;
 
 function Day(props) {
-    var date = props.day.dt;
+    var date = getDate(props.day.dt);
     var icon = props.day.weather[0].icon;
     return (
         <div onClick={props.onClick} className='dayContainer'>
